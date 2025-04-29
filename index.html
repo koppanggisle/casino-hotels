@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Casino Guide: World's Finest Hotel Gaming Destinations</title>
+  <meta name="description" content="Discover the world's finest hotel casinos. Our curated guide showcases legendary gaming destinations, entertainment venues, and world-class accommodations for casino enthusiasts.">
+  <meta name="keywords" content="best hotel casino, casino resorts, top casino hotels, global casino guide, gaming destinations, casino entertainment, high-end casino, world casino hotels, premier casino resorts, hotel gaming, casino vacation, elite casino destination">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Global Casino Guide: World's Finest Hotel Gaming Destinations">
+  <meta property="og:description" content="Discover the world's finest hotel casinos. Our curated guide showcases legendary gaming destinations, entertainment venues, and world-class accommodations for casino enthusiasts.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+  <meta property="og:url" content="https://globalcasinoguide.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Global Casino Guide: World's Finest Hotel Gaming Destinations">
+  <meta name="twitter:description" content="Discover the world's finest hotel casinos. Our curated guide showcases legendary gaming destinations, entertainment venues, and world-class accommodations for casino enthusiasts.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+  
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://globalcasinoguide.com">
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- XML Sitemap -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  
+  <!-- Schema.org JSON-LD Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Global Casino Guide: World's Finest Hotel Gaming Destinations",
+      "description": "Discover the world's finest hotel casinos. Our curated guide showcases legendary gaming destinations, entertainment venues, and world-class accommodations for casino enthusiasts.",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "LodgingBusiness",
+            "position": 1,
+            "name": "Bellagio Resort & Casino",
+            "image": "https://images.unsplash.com/photo-1602002418816-5c0aeef426aa",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Las Vegas",
+              "addressRegion": "NV",
+              "addressCountry": "USA"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "15423"
+            }
+          },
+          {
+            "@type": "LodgingBusiness",
+            "position": 2,
+            "name": "Marina Bay Sands",
+            "image": "https://images.unsplash.com/photo-1555912881-1ecd82307e0e",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Singapore",
+              "addressRegion": "",
+              "addressCountry": "Singapore"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.7",
+              "reviewCount": "12890"
+            }
+          },
+          {
+            "@type": "LodgingBusiness",
+            "position": 3,
+            "name": "Casino de Monte-Carlo",
+            "image": "https://images.unsplash.com/photo-1563874257547-d19fbb71b46c",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Monte Carlo",
+              "addressRegion": "",
+              "addressCountry": "Monaco"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "8762"
+            }
+          }
+        ]
+      }
+    }
+  </script>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Swiper JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  
+  <style>
+    /* Custom styles */
+    .section-container {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .section-container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .casino-modal {
+      transition: opacity 0.3s ease-out;
+    }
+    .hamburger div {
+      height: 2px;
+      width: 25px;
+      background-color: white;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-out;
+    }
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+    .map-tooltip {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+    }
+    .map-pin:hover + .map-tooltip,
+    .map-tooltip:hover {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+  
+  <!-- Header / Navigation -->
+  <header id="header" class="fixed w-full bg-gradient-to-r from-blue-900 to-purple-900 text-white z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <a href="#hero" class="text-2xl font-bold">Global Casino Guide</a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-6" id="desktopNav">
+        <!-- Nav links populated by JavaScript -->
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden hamburger" id="hamburgerBtn" aria-label="Menu">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-4/5 max-w-sm bg-gradient-to-r from-blue-800 to-purple-900 z-50 p-6 shadow-lg">
+      <div class="flex justify-end">
+        <button id="closeMenu" class="text-white text-xl" aria-label="Close Menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <nav class="mt-8 space-y-4" id="mobileNav">
+        <!-- Nav links populated by JavaScript -->
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Spectacular hotel casino view" class="object-cover w-full h-full" id="heroBackground">
+    </div>
+    <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+    <div class="container mx-auto px-6 z-20 text-center text-white">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Global Casino Guide</h1>
+      <h2 class="text-xl md:text-3xl mb-8">The World's Most Spectacular Hotel Casinos</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-4 mb-12">
+        <button id="exploreBtn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+          Explore Casinos
+        </button>
+        <button id="vipBtn" class="bg-transparent border-2 border-white hover:bg-white hover:text-purple-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+          Join VIP Club
+        </button>
+      </div>
+      <div class="bg-black bg-opacity-60 p-4 rounded-lg inline-block">
+        <p class="text-lg mb-2">Next Major Tournament:</p>
+        <div id="countdown" class="flex justify-center gap-4">
+          <div class="text-center">
+            <span id="days" class="text-2xl font-bold block">00</span>
+            <span class="text-sm">Days</span>
+          </div>
+          <div class="text-center">
+            <span id="hours" class="text-2xl font-bold block">00</span>
+            <span class="text-sm">Hours</span>
+          </div>
+          <div class="text-center">
+            <span id="minutes" class="text-2xl font-bold block">00</span>
+            <span class="text-sm">Minutes</span>
+          </div>
+          <div class="text-center">
+            <span id="seconds" class="text-2xl font-bold block">00</span>
+            <span class="text-sm">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sections Container - Will be dynamically populated -->
+  <div id="sectionsContainer">
+    <!-- Top Hotel Casinos -->
+    <section id="top-casinos" class="py-16 px-6 bg-white section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Top Hotel Casinos Around the World</h2>
+        <div id="casinoCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Casino cards will be populated here -->
+        </div>
+        <div class="text-center mt-12">
+          <button id="loadMoreBtn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+            <span class="inline-block mr-2">Load More</span>
+            <i class="fas fa-spinner fa-spin hidden" id="loadSpinner"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-6 bg-gray-100 section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Experience World-Class Amenities</h2>
+        <div id="featureBlocks" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature blocks will be populated here -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 px-6 bg-white section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Stunning Visual Tour</h2>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Swiper slides will be populated here -->
+          </div>
+          <div class="swiper-pagination mt-4"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div class="swiper-thumbs mt-4 grid grid-cols-5 gap-2">
+          <!-- Thumbnail images will be populated here -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Events Section -->
+    <section id="events" class="py-16 px-6 bg-gray-100 section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Upcoming Casino Events</h2>
+        <div class="swiper eventSwiper">
+          <div class="swiper-wrapper" id="eventCards">
+            <!-- Event cards will be populated here -->
+          </div>
+        </div>
+        <div class="flex justify-center mt-8">
+          <div class="swiper-button-prev-events mx-2 bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center cursor-pointer">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="swiper-button-next-events mx-2 bg-gray-800 text-white w-10 h-10 rounded-full flex items-center justify-center cursor-pointer">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- VIP Signup Section -->
+    <section id="vip" class="py-16 px-6 bg-white section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Join Our VIP Club</h2>
+        <div class="flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden">
+          <div class="w-full md:w-1/2 bg-gradient-to-r from-blue-900 to-purple-900 p-8 text-white flex flex-col justify-center">
+            <h3 class="text-2xl font-bold mb-4">Exclusive Benefits</h3>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+              <li>Early access to event information</li>
+              <li>Special event invitations</li>
+              <li>Casino strategy guides and tips</li>
+              <li>Detailed reviews of new casino hotels</li>
+              <li>Members-only content and resources</li>
+            </ul>
+            <p class="italic">Join today and elevate your casino knowledge!</p>
+          </div>
+          <div class="w-full md:w-1/2 bg-white p-8">
+            <form id="vipForm" class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600">
+              </div>
+              <div>
+                <label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+                <select id="country" name="country" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600">
+                  <option value="">Select your country</option>
+                  <!-- Countries will be populated by JavaScript -->
+                </select>
+              </div>
+              <div>
+                <label for="favoriteCasino" class="block text-sm font-medium text-gray-700 mb-1">Favorite Hotel Casino</label>
+                <select id="favoriteCasino" name="favoriteCasino" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600">
+                  <option value="">Select your favorite</option>
+                  <!-- Options will be populated by JavaScript -->
+                </select>
+              </div>
+              <div class="pt-4">
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
+                  <span>Join Now</span>
+                  <i class="fas fa-spinner fa-spin ml-2 hidden" id="submitSpinner"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 px-6 bg-gray-100 section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Casino Enthusiasts Say</h2>
+        <div class="swiper testimonialSwiper">
+          <div class="swiper-wrapper" id="testimonialCards">
+            <!-- Testimonial cards will be populated here -->
+          </div>
+        </div>
+        <div class="flex justify-center mt-8">
+          <div class="swiper-pagination-testimonials"></div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section id="world-map" class="py-16 px-6 bg-white section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Global Casino Map</h2>
+        <div class="relative w-full bg-blue-50 rounded-lg overflow-hidden shadow-lg" style="height: 500px;">
+          <div id="mapContainer" class="absolute inset-0">
+            <!-- Map pins will be populated here -->
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 px-6 bg-gray-100 section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+        <div id="faqAccordion" class="max-w-3xl mx-auto divide-y divide-gray-200">
+          <!-- FAQ items will be populated here -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 px-6 bg-white section-container">
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Latest Casino Insights</h2>
+        <div id="blogPosts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog posts will be populated here -->
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Footer Section -->
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Global Casino Guide</h3>
+          <p class="mb-4">Your trusted resource for exploring the world's finest hotel casinos and gaming destinations.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-gray-300" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-300" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-300" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-300" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2" id="footerLinks">
+            <!-- Footer links will be populated by JavaScript -->
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+          <p class="mb-4">Subscribe for the latest casino news and updates.</p>
+          <form id="newsletterForm" class="flex">
+            <input type="email" placeholder="Your email" required class="px-4 py-2 w-full rounded-l-md focus:outline-none focus:ring-2 focus:ring-purple-600 text-gray-800">
+            <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-r-md transition duration-300">
+              <span>Subscribe</span>
+              <i class="fas fa-spinner fa-spin ml-2 hidden" id="newsletterSpinner"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+        <p>&copy; 2025 Global Casino Guide. All rights reserved.</p>
+        <div class="flex mt-4 md:mt-0 space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+          <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Modals -->
+  <div id="casinoModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden casino-modal">
+    <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto m-4">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 id="modalCasinoName" class="text-2xl font-bold"></h3>
+          <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        <div id="modalContent" class="space-y-4">
+          <!-- Modal content will be populated here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="eventModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden casino-modal">
+    <div class="bg-white rounded-lg max-w-2xl w-full m-4">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 id="modalEventName" class="text-2xl font-bold"></h3>
+          <button id="closeEventModal" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        <div id="eventModalContent" class="space-y-4">
+          <!-- Event modal content will be populated here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="blogModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden casino-modal">
+    <div class="bg-white rounded-lg max-w-2xl w-full m-4">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 id="modalBlogTitle" class="text-2xl font-bold"></h3>
+          <button id="closeBlogModal" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        <div id="blogModalContent" class="space-y-4">
+          <!-- Blog modal content will be populated here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="successModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden casino-modal">
+    <div class="bg-white rounded-lg max-w-md w-full m-4">
+      <div class="p-6 text-center">
+        <div class="mb-4 text-green-500">
+          <i class="fas fa-check-circle text-6xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">Success!</h3>
+        <p id="successMessage" class="mb-6"></p>
+        <button id="closeSuccessModal" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-md transition duration-300">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-4 right-4 bg-green-600 text-white px-6 py-3 rounded-md shadow-lg transform transition-transform duration-300 translate-y-24 flex items-center">
+    <i class="fas fa-check-circle mr-2"></i>
+    <span id="toastMessage"></span>
+  </div>
+  
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
